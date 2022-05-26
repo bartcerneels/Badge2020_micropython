@@ -1,4 +1,5 @@
-from machine import Pin, PWM
+from machine import Pin, PWM, SDCard
+import os
 
 # all buttons are logic low except sw_b
 sw_up = Pin(39, Pin.IN) # Hardware pull-up
@@ -40,3 +41,10 @@ def test_buzzer():
     buzzer = PWM(Pin(25))
     buzzer.freq(500)
     buzzer.duty(256) # 25%
+
+def test_sd():
+    # Slot 2 uses pins sck=18, cs=5, miso=19, mosi=23
+    sd = SDCard(slot=2)
+    os.mount(sd, "/sd")  # mount
+    os.listdir('/sd')    # list directory contents
+    os.umount('/sd')     # eject
