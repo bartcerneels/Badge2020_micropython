@@ -13,3 +13,6 @@
 [submodule "micropython-lis2hh12"]
 	path = micropython-lis2hh12
 	url = https://github.com/tuupola/micropython-lis2hh12.git
+[submodule "Timeblaster"]
+	path = Timeblaster
+	url = https://github.com/area3001/Timeblaster.git
