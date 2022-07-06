@@ -48,6 +48,11 @@ class RunScreen(Screen):
         else:
             Label(wri, ssd.height//2, 30, 'No apps installed!')
 
+        def repl_cb(button):
+            system.start_repl()
+
+        Button(wri, ssd.height - 30, 0, height=30, text='Run REPL', callback=repl_cb)
+
         CloseButton(wri)
 
 class InstallScreen(Screen):

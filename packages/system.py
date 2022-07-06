@@ -11,7 +11,7 @@ def recover_menu():
     settings.store()
     machine.reset()
 
-def execute_repl():
+def start_repl():
     print("Executing REPL!")
     settings.set('apps.autorun', 'apps.repl')
     settings.store()
