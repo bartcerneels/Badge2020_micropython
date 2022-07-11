@@ -33,11 +33,11 @@ app = settings.get('apps.autorun')
 if app == None:
     app = "apps.menu"
 
-
 async def check_recover_button(pin):
     countdown = 5
     while pin.value() == 0:
         print('Hold for {} seconds to recover main menu.'.format(countdown))
+        system.show_recover_countdown(countdown)
         countdown -= 1
         if (countdown == 0):
             system.recover_menu()
